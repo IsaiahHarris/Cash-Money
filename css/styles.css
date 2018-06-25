@@ -1,14 +1,19 @@
+body{
+    background-image:   url('http://s.thestreet.com/files/tsc/v2008/photos/contrib/uploads/80721bb7-cd48-11e6-b490-0f437cfe09ba.png');
+}
+
 #calc-body {
-    background-color:hotpink;
+    background-color:#04E762;
     margin: auto;
     height: 100%;
     width: 50%;
 }
-#screen{
-    background-color:yellow;
+#screen, #balanceScreen{
+    background-color:#172A3A;
+    color: #C5FFFD;
     text-align: end;
-    border: solid hotpink 50px;
-    border-top: solid hotpink 30px;
+    border: solid #04E762 20px;
+    border-top: solid #04E762 30px;
     padding: 20px;
     font-size: 20px;
 }
@@ -19,7 +24,9 @@
     list-style: none; 
     padding: 10px;
     margin: 20px;
+    
 }
+
 li {
     flex: 1 1 20%;
     text-align: center;
@@ -27,4 +34,8 @@ li {
     background-color: lightgreen;
     padding: 10px;
     margin: 5px;
+    border: outset 2px #f4f4f4;
+}
+li:active{
+    border: inset 2px #f4f4f4;
 }

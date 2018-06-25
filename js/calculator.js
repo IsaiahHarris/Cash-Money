@@ -1,6 +1,7 @@
     (function(){
 
-    
+   
+
     let scream = document.getElementById('screen');
     //turns on calc
     let onBoi = document.getElementById('turnOn');
@@ -16,19 +17,16 @@
         console.log('off')
     }
     offBoi.addEventListener('click', turnOff);
-
+//sets to 0
     let clearBoi = document.getElementById('clear');
     function clearr (){
-        if(scream.innerHTML === ''){
-            alert('cannot clear if da ting already stay clear, yah?')
-        }else if (typeof scream.innerHTML === 'string'){
+        if(scream.innerHTML !== 0){
             scream.innerHTML = 0;
-            console.log('on');
         }
-
     }
-    clearBoi.addEventListener('click', clearr);
 
+    clearBoi.addEventListener('click', clearr);
+//press buttons
     let sevin = document.getElementById('num7');
     function printSevin (){
          if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -67,8 +65,7 @@
         if(scream.innerHTML !== ''){
             scream.innerHTML += '|';
         } 
-        console.log('|')
-    }
+    } 
     slass.addEventListener('click', divide);
 
 
@@ -191,52 +188,48 @@
 
 
     */
-   var memory = 0;
-   function add(){
+ var memory  = 0;
+
+ function add (){
+     memory = scream.innerHTML;
+     memory = memory + '+';
+     scream.innerHTML = '+';
+ }
+ function subtract (){
     memory = scream.innerHTML;
-    memory = memory + '+';
-    scream.innerHTML = '+';
-    return memory;
-   }
-   function subtract(){
-       memory = scream.innerHTML;
-       memory = memory + '-';
-       scream.innerHTML = '-';
-       return memory;
-   }
-   function divide(){
+    memory = memory + '-';
+    scream.innerHTML = '-';
+}
+function divide (){
     memory = scream.innerHTML;
     memory = memory + '|';
     scream.innerHTML = '|';
-    return memory;
 }
-    function multiply(){
-        memory = scream.innerHTML;
-        memory = memory + '*';
-        scream.innerHTML = '*';
-        return memory;
-    }
+function multiply (){
+    memory = scream.innerHTML;
+    memory = memory + '*';
+    scream.innerHTML = '*';
+}
 
-   function equals(){
-       if(memory.includes('+')){
-           var currentNum = parseFloat(scream.innerHTML);
-           var storedNum = parseFloat(memory);
-           scream.innerHTML = storedNum+currentNum;
-           //console.log(storedNum + currentNum);
-       } else if (memory.includes('-')){
-           var currentNum = parseFloat(scream.innerHTML);
-           var storedNum = parseFloat(memory)
-           scream.innerHTML = storedNum-currentNum;
-       } else if (memory.includes('*')){
+function equals(){
+    if (memory.includes('+')){
+        var storedNum = parseFloat(memory);
         var currentNum = parseFloat(scream.innerHTML);
-        var storedNum = parseFloat(memory)
-        scream.innerHTML = storedNum*currentNum;
-       } else if (memory.includes('|')){
+        scream.innerHTML = storedNum + currentNum;
+    } else if (memory.includes('-')){
+        var storedNum = parseFloat(memory);
         var currentNum = parseFloat(scream.innerHTML);
-        var storedNum = parseFloat(memory)
-        scream.innerHTML = storedNum/currentNum;
-       }
-   }
+        scream.innerHTML = storedNum - currentNum;
+    } else if (memory.includes('*')){
+        var storedNum = parseFloat(memory);
+        var currentNum = parseFloat(scream.innerHTML);
+        scream.innerHTML = storedNum * currentNum;
+    } else if (memory.includes('|')){
+        var storedNum = parseFloat(memory);
+        var currentNum = parseFloat(scream.innerHTML);
+        scream.innerHTML = storedNum / currentNum;
+    }
+}
 /////cash register///
 
 let storage = 0;
@@ -245,12 +238,17 @@ let storage = 0;
 function depo(){
     screen = parseFloat(scream.innerHTML);
     storage = parseFloat(storage + screen);
+    scream.innerHTML = 0;
 }
 var depoButton = document.getElementById('deposit');
 depoButton.addEventListener('click', depo);
 
+var balScreen = document.getElementById('balanceScreen');
 function checkBal(){
-    scream.innerHTML = storage;
+    balScreen.innerHTML = storage;
+    setTimeout(function checkTozero(){
+        balScreen.innerHTML='';
+    }, 5000)
 }
 
 var checkBalButton = document.getElementById('balance');
@@ -259,8 +257,12 @@ checkBalButton.addEventListener('click', checkBal)
 function withdraww (){
     screen = parseFloat(scream.innerHTML);
     storage = parseFloat(storage - screen);
+    scream.innerHTML = 0;
 
 }
 var checkWithButton = document.getElementById('withdraw');
 checkWithButton.addEventListener('click', withdraww);
-})();
+
+
+}
+)();
