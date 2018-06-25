@@ -1,0 +1,30 @@
+#calc-body {
+    background-color:hotpink;
+    margin: auto;
+    height: 100%;
+    width: 50%;
+}
+#screen{
+    background-color:yellow;
+    text-align: end;
+    border: solid hotpink 50px;
+    border-top: solid hotpink 30px;
+    padding: 20px;
+    font-size: 20px;
+}
+.controls, .row-one, .row-two, .row-three, .row-four, .row-five{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    list-style: none; 
+    padding: 10px;
+    margin: 20px;
+}
+li {
+    flex: 1 1 20%;
+    text-align: center;
+    border: solid black 2px;
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 5px;
+}

@@ -1,0 +1,266 @@
+    (function(){
+
+    
+    let scream = document.getElementById('screen');
+    //turns on calc
+    let onBoi = document.getElementById('turnOn');
+    function turnOnn (){
+        scream.innerHTML = 0;
+        console.log('on');
+    }
+    onBoi.addEventListener('click', turnOnn);
+//turns off calc
+    let offBoi = document.getElementById('turnOff');
+    function turnOff (){
+        scream.innerHTML = '';
+        console.log('off')
+    }
+    offBoi.addEventListener('click', turnOff);
+
+    let clearBoi = document.getElementById('clear');
+    function clearr (){
+        if(scream.innerHTML === ''){
+            alert('cannot clear if da ting already stay clear, yah?')
+        }else if (typeof scream.innerHTML === 'string'){
+            scream.innerHTML = 0;
+            console.log('on');
+        }
+
+    }
+    clearBoi.addEventListener('click', clearr);
+
+    let sevin = document.getElementById('num7');
+    function printSevin (){
+         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 7;
+        } else if (scream.innerHTML !==0){
+            scream.innerHTML+=7;
+        }
+        console.log('7')
+    }
+
+    sevin.addEventListener('click', printSevin);
+
+    let ate = document.getElementById('num8');
+    function printAte (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 8;
+        } else {
+            scream.innerHTML += 8;
+        }
+    }
+    ate.addEventListener('click', printAte);
+
+    let nein = document.getElementById('num9');
+    function printNein (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 9;
+        } else {
+            scream.innerHTML +=9;
+        }
+        console.log('9')
+    }
+    nein.addEventListener('click', printNein);
+
+    let slass = document.getElementById('slash');
+    function printSlass (){
+        if(scream.innerHTML !== ''){
+            scream.innerHTML += '|';
+        } 
+        console.log('|')
+    }
+    slass.addEventListener('click', divide);
+
+
+    let fourr = document.getElementById('num4');
+    function printFourr (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 4;
+        }else{
+            scream.innerHTML +=4;
+        }
+        console.log('4')
+    }
+    fourr.addEventListener('click', printFourr);
+
+
+    let fivv = document.getElementById('num5');
+    function printFivv (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 5;
+        }else{
+            scream.innerHTML+=5;
+        }
+        console.log('5')
+    }
+    fivv.addEventListener('click', printFivv);
+
+    let sixx = document.getElementById('num6');
+    function printSixx (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 6;
+        }else{
+            scream.innerHTML+=6
+        }
+        console.log('6')
+    }
+    sixx.addEventListener('click', printSixx);
+
+    let starring = document.getElementById('starr');
+    function printStarring (){
+        if(scream.innerHTML !== ''){
+            scream.innerHTML += '*';
+        }
+        console.log('*')
+    }
+    starring.addEventListener('click', multiply);
+
+    let onee = document.getElementById('num1');
+    function printOnee (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|'|| scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 1;
+        }else{
+            scream.innerHTML+= 1;
+        }
+        console.log('1')
+    }
+    onee.addEventListener('click', printOnee);
+
+    let too = document.getElementById('num2');
+    function printToo (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 2;
+        }else {
+            scream.innerHTML+=2;
+        }
+        console.log('2')
+    }
+    too.addEventListener('click', printToo);
+
+    let tree = document.getElementById('num3');
+    function printTree (){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 3;
+        } else {
+            scream.innerHTML+=3;
+        }
+        console.log('3')
+    }
+    tree.addEventListener('click', printTree);
+
+    let miness = document.getElementById('minuse');
+    function printMiness(){
+        if(scream.innerHTML !== ''){
+            scream.innerHTML += '-';
+        }
+        console.log('-')
+    }
+    miness.addEventListener('click', subtract);
+
+    let zipp = document.getElementById('num0');
+    function printZipp(){
+        if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
+            scream.innerHTML = 0;
+        } else {
+            scream.innerHTML +=0
+        }
+        console.log('0')
+    }
+    zipp.addEventListener('click', printZipp);
+
+
+    let ee = document.getElementById('equalss');
+    function printEe(){
+        if(scream.innerHTML !== ''){
+            scream.innerHTML += '=';
+        }
+        console.log('=')
+    }
+    ee.addEventListener('click', equals);
+
+    let pluss = document.getElementById('pluse');
+    function printPluss(){
+        if(scream.innerHTML !== ''){
+            scream.innerHTML += '+';
+        } 
+        console.log('+')
+    }
+    pluss.addEventListener('click', add);
+
+    /*calc logic
+
+
+    */
+   var memory = 0;
+   function add(){
+    memory = scream.innerHTML;
+    memory = memory + '+';
+    scream.innerHTML = '+';
+    return memory;
+   }
+   function subtract(){
+       memory = scream.innerHTML;
+       memory = memory + '-';
+       scream.innerHTML = '-';
+       return memory;
+   }
+   function divide(){
+    memory = scream.innerHTML;
+    memory = memory + '|';
+    scream.innerHTML = '|';
+    return memory;
+}
+    function multiply(){
+        memory = scream.innerHTML;
+        memory = memory + '*';
+        scream.innerHTML = '*';
+        return memory;
+    }
+
+   function equals(){
+       if(memory.includes('+')){
+           var currentNum = parseFloat(scream.innerHTML);
+           var storedNum = parseFloat(memory);
+           scream.innerHTML = storedNum+currentNum;
+           //console.log(storedNum + currentNum);
+       } else if (memory.includes('-')){
+           var currentNum = parseFloat(scream.innerHTML);
+           var storedNum = parseFloat(memory)
+           scream.innerHTML = storedNum-currentNum;
+       } else if (memory.includes('*')){
+        var currentNum = parseFloat(scream.innerHTML);
+        var storedNum = parseFloat(memory)
+        scream.innerHTML = storedNum*currentNum;
+       } else if (memory.includes('|')){
+        var currentNum = parseFloat(scream.innerHTML);
+        var storedNum = parseFloat(memory)
+        scream.innerHTML = storedNum/currentNum;
+       }
+   }
+/////cash register///
+
+let storage = 0;
+
+
+function depo(){
+    screen = parseFloat(scream.innerHTML);
+    storage = parseFloat(storage + screen);
+}
+var depoButton = document.getElementById('deposit');
+depoButton.addEventListener('click', depo);
+
+function checkBal(){
+    scream.innerHTML = storage;
+}
+
+var checkBalButton = document.getElementById('balance');
+checkBalButton.addEventListener('click', checkBal)
+
+function withdraww (){
+    screen = parseFloat(scream.innerHTML);
+    storage = parseFloat(storage - screen);
+
+}
+var checkWithButton = document.getElementById('withdraw');
+checkWithButton.addEventListener('click', withdraww);
+})();
