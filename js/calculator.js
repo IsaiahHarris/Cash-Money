@@ -8,6 +8,7 @@
     function turnOnn (){
         scream.innerHTML = 0;
         console.log('on');
+    
     }
     onBoi.addEventListener('click', turnOnn);
 //turns off calc
@@ -22,8 +23,10 @@
     function clearr (){
         if(scream.innerHTML !== 0){
             scream.innerHTML = 0;
+            memory=0;
         }
     }
+
 
     clearBoi.addEventListener('click', clearr);
 //press buttons
@@ -38,6 +41,7 @@
     }
 
     sevin.addEventListener('click', printSevin);
+    sevin.addEventListener('click', equals);
 
     let ate = document.getElementById('num8');
     function printAte (){
@@ -48,6 +52,7 @@
         }
     }
     ate.addEventListener('click', printAte);
+    ate.addEventListener('click', equals);
 
     let nein = document.getElementById('num9');
     function printNein (){
@@ -59,7 +64,7 @@
         console.log('9')
     }
     nein.addEventListener('click', printNein);
-
+    nein.addEventListener('click', equals);
     let slass = document.getElementById('slash');
     function printSlass (){
         if(scream.innerHTML !== ''){
@@ -79,7 +84,7 @@
         console.log('4')
     }
     fourr.addEventListener('click', printFourr);
-
+    fourr.addEventListener('click', equals);
 
     let fivv = document.getElementById('num5');
     function printFivv (){
@@ -91,7 +96,7 @@
         console.log('5')
     }
     fivv.addEventListener('click', printFivv);
-
+    fivv.addEventListener('click', equals);
     let sixx = document.getElementById('num6');
     function printSixx (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -102,7 +107,7 @@
         console.log('6')
     }
     sixx.addEventListener('click', printSixx);
-
+    sixx.addEventListener('click', equals);
     let starring = document.getElementById('starr');
     function printStarring (){
         if(scream.innerHTML !== ''){
@@ -122,7 +127,7 @@
         console.log('1')
     }
     onee.addEventListener('click', printOnee);
-
+    onee.addEventListener('click', equals);
     let too = document.getElementById('num2');
     function printToo (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -133,7 +138,7 @@
         console.log('2')
     }
     too.addEventListener('click', printToo);
-
+    too.addEventListener('click', equals);
     let tree = document.getElementById('num3');
     function printTree (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -144,7 +149,7 @@
         console.log('3')
     }
     tree.addEventListener('click', printTree);
-
+    tree.addEventListener('click', equals);
     let miness = document.getElementById('minuse');
     function printMiness(){
         if(scream.innerHTML !== ''){
@@ -164,7 +169,7 @@
         console.log('0')
     }
     zipp.addEventListener('click', printZipp);
-
+    zipp.addEventListener('click', equals);
 
     let ee = document.getElementById('equalss');
     function printEe(){
