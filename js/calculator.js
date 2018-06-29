@@ -45,7 +45,7 @@ var calculator = (function(){
     }
     
     sevin.addEventListener('click', printSevin);
-    sevin.addEventListener('click', equals);
+    //sevin.addEventListener('click', equal);
     
     let ate = document.getElementById('num8');
     function printAte (){
@@ -56,7 +56,7 @@ var calculator = (function(){
         }
     }
     ate.addEventListener('click', printAte);
-    ate.addEventListener('click', equals);
+    //ate.addEventListener('click', equal);
     
     let nein = document.getElementById('num9');
     function printNein (){
@@ -68,7 +68,7 @@ var calculator = (function(){
         console.log('9')
     }
     nein.addEventListener('click', printNein);
-    nein.addEventListener('click', equals);
+    //nein.addEventListener('click', equal);
     let slass = document.getElementById('slash');
     function printSlass (){
         if(scream.innerHTML !== ''){
@@ -88,7 +88,7 @@ var calculator = (function(){
         console.log('4')
     }
     fourr.addEventListener('click', printFourr);
-    fourr.addEventListener('click', equals);
+    //fourr.addEventListener('click', equal);
     
     let fivv = document.getElementById('num5');
     function printFivv (){
@@ -100,7 +100,7 @@ var calculator = (function(){
         console.log('5')
     }
     fivv.addEventListener('click', printFivv);
-    fivv.addEventListener('click', equals);
+    //fivv.addEventListener('click', equal);
     let sixx = document.getElementById('num6');
     function printSixx (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -111,7 +111,7 @@ var calculator = (function(){
         console.log('6')
     }
     sixx.addEventListener('click', printSixx);
-    sixx.addEventListener('click', equals);
+    //sixx.addEventListener('click', equal);
     let starring = document.getElementById('starr');
     function printStarring (){
         if(scream.innerHTML !== ''){
@@ -131,7 +131,7 @@ var calculator = (function(){
         console.log('1')
     }
     onee.addEventListener('click', printOnee);
-    onee.addEventListener('click', equals);
+   // onee.addEventListener('click', equal);
     let too = document.getElementById('num2');
     function printToo (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -142,7 +142,7 @@ var calculator = (function(){
         console.log('2')
     }
     too.addEventListener('click', printToo);
-    too.addEventListener('click', equals);
+    //too.addEventListener('click', equal);
     let tree = document.getElementById('num3');
     function printTree (){
         if(scream.innerHTML == 0 || scream.innerHTML === '*' || scream.innerHTML === '|' || scream.innerHTML === '+' || scream.innerHTML === '-'){
@@ -153,7 +153,7 @@ var calculator = (function(){
         console.log('3')
     }
     tree.addEventListener('click', printTree);
-    tree.addEventListener('click', equals);
+    //tree.addEventListener('click', equal);
     let miness = document.getElementById('minuse');
     function printMiness(){
         if(scream.innerHTML !== ''){
@@ -173,7 +173,7 @@ var calculator = (function(){
         console.log('0')
     }
     zipp.addEventListener('click', printZipp);
-    zipp.addEventListener('click', equals);
+    //zipp.addEventListener('click', equal);
     
     let dotButton = document.getElementById('dot');
     dotButton.addEventListener('click', printDot);
@@ -186,14 +186,7 @@ var calculator = (function(){
     }
     
     
-    let ee = document.getElementById('equalss');
-    function printEe(){
-        if(scream.innerHTML !== ''){
-            scream.innerHTML += '=';
-        }
-        console.log('=')
-    }
-    ee.addEventListener('click', equals);
+
     
     let pluss = document.getElementById('pluse');
     function printPluss(){
@@ -229,26 +222,36 @@ function multiply (){
     memory = memory + '*';
     scream.innerHTML = '*';
 }
-
-function equals(){
-    if (memory.includes('+')){
-        var storedNum = parseFloat(memory);
-        var currentNum = parseFloat(scream.innerHTML);
-        scream.innerHTML = storedNum + currentNum;
-    } else if (memory.includes('-')){
-        var storedNum = parseFloat(memory);
-        var currentNum = parseFloat(scream.innerHTML);
-        scream.innerHTML = storedNum - currentNum;
-    } else if (memory.includes('*')){
-        var storedNum = parseFloat(memory);
-        var currentNum = parseFloat(scream.innerHTML);
-        scream.innerHTML = storedNum * currentNum;
-    } else if (memory.includes('|')){
-        var storedNum = parseFloat(memory);
-        var currentNum = parseFloat(scream.innerHTML);
-        scream.innerHTML = storedNum / currentNum;
+let ee = document.getElementById('eq');
+function printEe(){
+    if(scream.innerHTML !== ''){
+        scream.innerHTML += '=';
     }
+    console.log('=')
 }
+ee.addEventListener('click', equals);
+
+        function equals(){
+            if (memory.includes('+')){
+                var storedNum = parseFloat(memory);
+                var currentNum = parseFloat(scream.innerHTML);
+                scream.innerHTML = storedNum + currentNum;
+            } else if (memory.includes('-')){
+                var storedNum = parseFloat(memory);
+                var currentNum = parseFloat(scream.innerHTML);
+                scream.innerHTML = storedNum - currentNum;
+            } else if (memory.includes('*')){
+                var storedNum = parseFloat(memory);
+                var currentNum = parseFloat(scream.innerHTML);
+                scream.innerHTML = storedNum * currentNum;
+            } else if (memory.includes('|')){
+                var storedNum = parseFloat(memory);
+                var currentNum = parseFloat(scream.innerHTML);
+                scream.innerHTML = storedNum / currentNum;
+            }
+    }
+
+
 /////cash register///
     return {
         scream:scream
