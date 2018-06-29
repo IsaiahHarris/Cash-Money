@@ -248,9 +248,16 @@ ee.addEventListener('click', equals);
                 var storedNum = parseFloat(memory);
                 var currentNum = parseFloat(scream.innerHTML);
                 scream.innerHTML = storedNum / currentNum;
+            } else {
+                throw err;
             }
     }
 
+var squaree = document.getElementById('sq');
+function squareDat (){
+    scream.innerHTML *= scream.innerHTML;
+}
+squaree.addEventListener('click', squareDat);
 
 /////cash register///
     return {
