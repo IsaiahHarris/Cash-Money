@@ -24,7 +24,7 @@ var calculator = (function(){
     //sets to 0
     let clearBoi = document.getElementById('clear');
     function clearr (){
-        if(scream.innerHTML !== 0){
+        if(scream.innerHTML !== 0 && scream.innerHTML !==''){
             scream.innerHTML = 0;
             memory=0;
             console.log(memory);
